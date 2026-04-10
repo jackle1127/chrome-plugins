@@ -3,7 +3,7 @@
   "name": "Google Dark Mode",
   "version": "1.1.0",
   "description": "Dark mode for Google Docs and Sheets - inverts colors while preserving images",
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "tabs"],
   "host_permissions": [
     "https://docs.google.com/*"
   ],

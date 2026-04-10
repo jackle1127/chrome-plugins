@@ -92,6 +92,44 @@
     input:checked + .slider::before {
       transform: translateX(16px);
     }
+
+    .refresh-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #313244;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .refresh-row.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .refresh-hint {
+      font-size: 11px;
+      color: #6c7086;
+    }
+
+    .refresh-btn {
+      font-size: 11px;
+      color: #89b4fa;
+      background: none;
+      border: 1px solid #89b4fa;
+      border-radius: 4px;
+      padding: 3px 8px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .refresh-btn:hover {
+      background: #89b4fa22;
+    }
   </style>
 </head>
 <body>
@@ -109,6 +147,11 @@
       <input type="checkbox" id="toggle">
       <span class="slider"></span>
     </label>
+  </div>
+
+  <div class="refresh-row" id="refresh-row">
+    <span class="refresh-hint">Refresh to apply fully</span>
+    <button class="refresh-btn" id="refresh-btn">Refresh</button>
   </div>
 
   <script src="popup.js"></script>
