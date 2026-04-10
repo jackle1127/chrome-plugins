@@ -4,4 +4,11 @@ html.gdm-dark {
   background: #fff;
 }
 
+/* Re-invert images and video so they keep their original colors */
+html.gdm-dark img,
+html.gdm-dark video,
+html.gdm-dark [style*="background-image"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 
