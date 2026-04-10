@@ -37,10 +37,6 @@
   // --- TOP FRAME ---
   function setDarkMode(enabled) {
     document.documentElement.classList.toggle(CLASS, enabled);
-    // Force the app to re-render canvas tiles so drawing colors update immediately.
-    // Without this, existing tiles keep their old drawn colors until the user scrolls.
-    window.scrollBy(0, 1);
-    requestAnimationFrame(() => window.scrollBy(0, -1));
   }
 
   chrome.storage.local.get([STORAGE_KEY], (result) => {
