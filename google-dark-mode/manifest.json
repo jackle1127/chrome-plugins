@@ -5,12 +5,11 @@
   "description": "Dark mode for Google Docs and Sheets - inverts colors while preserving images",
   "permissions": ["storage", "activeTab"],
   "host_permissions": [
-    "https://docs.google.com/*",
-    "https://sheets.google.com/*"
+    "https://docs.google.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://docs.google.com/*"],
+      "matches": ["https://docs.google.com/document/*"],
       "js": ["canvas-patch.js"],
       "run_at": "document_start",
       "world": "MAIN",
@@ -18,13 +17,6 @@
     },
     {
       "matches": ["https://docs.google.com/*"],
-      "js": ["content.js"],
-      "css": ["dark.css"],
-      "run_at": "document_start",
-      "all_frames": true
-    },
-    {
-      "matches": ["https://sheets.google.com/*"],
       "js": ["content.js"],
       "css": ["dark.css"],
       "run_at": "document_start",
