@@ -1,6 +1,5 @@
 const STORAGE_KEY = 'gdm_enabled';
 const toggle = document.getElementById('toggle');
-const refreshRow = document.getElementById('refresh-row');
 const refreshBtn = document.getElementById('refresh-btn');
 
 // Load current state
@@ -19,8 +18,9 @@ toggle.addEventListener('change', () => {
     }
   });
 
-  // Show refresh hint for Docs (canvas tiles need a reload to fully update)
-  refreshRow.classList.add('visible');
+  // Enable refresh button after toggling (canvas tiles need a reload to fully update)
+  refreshBtn.disabled = false;
+  refreshBtn.classList.add('enabled');
 });
 
 // Refresh the active tab
