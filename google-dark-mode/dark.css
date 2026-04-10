@@ -4,11 +4,17 @@ html.gdm-dark {
   background: #fff;
 }
 
-/* Re-invert images and video so they keep their original colors */
+/* Re-invert images and video outside the document canvas */
 html.gdm-dark img,
 html.gdm-dark video,
 html.gdm-dark [style*="background-image"] {
   filter: invert(1) hue-rotate(180deg);
 }
 
-
+/* Re-invert Docs canvas tiles so only canvas-patch.js controls their colors.
+   CSS invert on html + this re-invert cancel out; the only color effect
+   comes from canvas-patch.js which inverts text/fills but leaves drawImage
+   alone - so text is light and embedded images keep their original colors. */
+html.gdm-dark canvas.kix-canvas-tile-content {
+  filter: invert(1) hue-rotate(180deg);
+}
