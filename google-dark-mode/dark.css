@@ -1,0 +1,21 @@
+/* Applied when dark mode is enabled */
+html.gdm-dark {
+  filter: invert(1) hue-rotate(180deg);
+  background: #fff;
+}
+
+/* Re-invert images and video outside the document canvas */
+html.gdm-dark img,
+html.gdm-dark video,
+html.gdm-dark [style*="background-image"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Re-invert the document canvas tiles.
+   The CSS invert on <html> + this re-invert cancel each other out (net = no CSS
+   color change on the canvas). The only color effect inside the tiles comes from
+   canvas-patch.js, which inverts drawing colors (text/fills) but leaves drawImage
+   alone — so text becomes light and embedded images keep their original colors. */
+html.gdm-dark canvas.kix-canvas-tile-content {
+  filter: invert(1) hue-rotate(180deg);
+}

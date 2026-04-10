@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf /c/Users/Jack/Workspace/chrome-plugins/google-dark-mode/.git)",
+      "Bash(gh repo:*)"
+    ]
+  }
+}
