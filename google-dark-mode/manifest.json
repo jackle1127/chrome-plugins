@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Google Dark Mode",
+  "name": "Google Docs Dark Mode",
   "version": "1.2.0",
   "description": "Dark mode for Google Docs and Sheets - inverts colors while preserving images",
   "permissions": ["storage", "activeTab", "tabs"],
