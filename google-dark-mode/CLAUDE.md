@@ -2,7 +2,7 @@
 
 ## Version
 
-Current version: **1.2.0** (in `manifest.json`)
+Current version: **1.2.2** (in `manifest.json`)
 
 **Always bump the version in `manifest.json` when making changes before zipping for the Chrome Web Store.**
 

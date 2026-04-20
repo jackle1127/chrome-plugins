@@ -11,6 +11,13 @@ html.gdm-dark [style*="background-image"] {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* Re-invert iframes (e.g. Google Account popup) back to original colors.
+   The parent filter visually inverts iframes but our CSS can't reach inside
+   cross-origin/about:blank frames, so double-invert here cancels the effect. */
+html.gdm-dark iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* Re-invert Docs canvas tiles so only canvas-patch.js controls their colors.
    CSS invert on html + this re-invert cancel out; the only color effect
    comes from canvas-patch.js which inverts text/fills but leaves drawImage
